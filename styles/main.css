@@ -1,0 +1,10 @@
+@import "tailwindcss/base";
+@import "./lib_css/css-resets/elad-shector.scss";
+@import "./lib_css/css-resets/normalize.scss";
+@import "./lib_css/base.css";
+
+/* @import "./lib_scss/index.scss"; */
+@import "tailwindcss/components";
+@import "./lib_css/components.css";
+
+@import "tailwindcss/utilities";

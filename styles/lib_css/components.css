@@ -1,0 +1,189 @@
+@layer components {
+    .main-nav {
+        @apply flex items-center justify-between gap-4;
+    }
+    .menu {
+        @apply hidden flex-grow items-center justify-end gap-4 sm:flex;
+    }
+    .hamburger {
+        @apply flex sm:hidden;
+    }
+    .btn {
+        @apply cursor-pointer rounded border-2 border-solid bg-[--btn-bg] px-5 py-3 font-medium text-white active:scale-[.98];
+    }
+    .hover-invert {
+        @apply hover:border-[--btn-bg] hover:bg-white hover:text-[--btn-bg];
+    }
+    .card {
+        @apply mx-auto my-12 flex max-w-max flex-col items-center justify-center gap-3 px-2 py-4;
+        box-shadow: 0px 0px 20px 0px hsla(0, 0%, 80%, 1);
+    }
+    .h-line {
+        @apply w-full;
+        border-bottom: 1px solid hsla(0, 0%, 0%, 0.3);
+    }
+    .h-2lines {
+        @apply w-full;
+        border-block: 1px solid hsla(0, 0%, 0%, 0.5);
+    }
+    .intro {
+        @apply mx-auto mb-8 mt-4 max-w-lg;
+    }
+    .input {
+        @apply h-11 w-80 rounded bg-white p-5 placeholder-gray-400;
+    }
+    [data-form-validate="invalid"] {
+        border: 3px solid var(--border-invalid-color);
+    }
+    .tickmark {
+        @apply hidden h-[6px] w-[12px] -rotate-45;
+        border-left: 2px solid white;
+        border-bottom: 2px solid white;
+    }
+    .checkbox {
+        @apply h-5 w-5 rounded outline outline-1 outline-gray-300 checked:bg-[hsl(243,_100%,_62%)];
+    }
+    .checkbox:checked + .tickmark {
+        @apply block;
+    }
+    .c-shadow {
+        box-shadow: 0px 0px 20px 0px hsla(0, 0%, 80%, 1);
+    }
+}
+
+/* Bookmark Landing Page */
+.fem-int-bookmark {
+    @media (max-width: 639px) {
+        .main-nav.active .logo-img {
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+        }
+        .menu.active {
+            @apply fixed left-0 top-0 z-40 flex h-screen w-screen flex-col items-center justify-center bg-[hsla(229,_31%,_21%,_0.9)] px-4 py-8 text-lg tracking-widest text-white sm:hidden;
+            .menu-list {
+                @apply mt-auto flex flex-col;
+            }
+            .btn {
+                @apply mb-20 w-3/4 bg-transparent;
+            }
+            .social-Icons {
+                @apply mt-auto flex gap-8;
+            }
+        }
+        .hamburger-wrapper.active {
+            .hamburger-open-img {
+                @apply hidden;
+            }
+            .hamburger-close-img {
+                @apply block;
+            }
+        }
+    }
+
+    .tab-button.active {
+        border-bottom: 4px solid var(--secondary-color);
+        border-radius: 0;
+    }
+    .tab-card.active {
+        display: flex;
+    }
+    .accordian-header.active img {
+        @apply rotate-180;
+        filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(120deg) brightness(100%) contrast(100%);
+    }
+    .accordian-content.active {
+        @apply mx-auto my-8 block w-[80%];
+    }
+
+    footer .logo-img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    }
+}
+
+/* Multi Step Form */
+.fem-adv-multi-form {
+    .step-navigation {
+        background-image: url("/images/front_end_mentor/fem-adv-multi-form/bg-sidebar-mobile.svg");
+        background-repeat: no-repeat;
+        background-position: 0% 0%;
+        background-size: cover;
+        @media (min-width: 640px) {
+            background-image: url("/images/front_end_mentor/fem-adv-multi-form/bg-sidebar-desktop.svg");
+        }
+    }
+    .step.active {
+        @apply flex;
+    }
+    .nav-btn.active {
+        background-color: hsl(228, 100%, 84%);
+    }
+    /* step 2 */
+    .plan-label.active {
+        outline: 2px solid hsl(243, 100%, 62%);
+    }
+    input[id="toggle"]:checked + .toggle-btn {
+        left: 50%;
+    }
+
+    .toggle-description.active {
+        @apply font-bold text-gray-900;
+    }
+}
+
+/* Ecommerce Product Page */
+.fem-ecommerce-product-page {
+    .menu.active {
+        @apply fixed left-0 top-0 z-40 flex h-screen w-1/2 flex-col items-start justify-start bg-white text-start text-lg tracking-widest text-black sm:hidden;
+        li:first-child {
+            @apply mt-20;
+        }
+        a {
+            @apply py-1 font-bold;
+        }
+    }
+    .hamburger-wrapper.active {
+        .hamburger-open-img {
+            @apply hidden;
+        }
+        .hamburger-close-img {
+            @apply block;
+        }
+    }
+    .thumbnail-img.active {
+        border: 3px solid hsl(26, 100%, 55%);
+        opacity: 0.7;
+        padding: 1px;
+    }
+    .lightbox-overlay.active {
+        @apply sm:block;
+    }
+    .lightbox-close-img {
+        filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(10deg) brightness(100%) contrast(100%);
+    }
+    .cart-btn-icon {
+        /* @apply h-6 w-6 rounded-full bg-white p-1; */
+        filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    }
+    /* .cart-wrapper:hover .cart-dropdown, */
+    .cart-wrapper.active .cart-dropdown {
+        @apply block;
+    }
+}
+
+/* Job Listing Master */
+.fem-int-job-listing {
+    .header-bg {
+        background-image: url("/images/front_end_mentor/fem-int-job-listing/bg-header-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        @media (min-width: 640px) {
+            background-image: url("/images/front_end_mentor/fem-int-job-listing/bg-header-desktop.svg");
+        }
+    }
+    .featured {
+        border-left: 4px solid hsl(180, 8%, 52%);
+    }
+    .filter-cross {
+        filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(10deg) brightness(100%) contrast(100%);
+    }
+}

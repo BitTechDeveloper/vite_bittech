@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator App Main</title>
+        <link rel="stylesheet" href="/styles/main.css" />
+        <style>
+            body {
+                --primary-color: white;
+            }
+            .pad .btn {
+                --btn-bg: white;
+                color: black;
+                border: transparent;
+            }
+        </style>
+        <script type="module" src="/scripts/front_end_mentor/fem-int-calculator.js" defer></script>
+    </head>
+    <body class="h-screen w-screen bg-[hsl(222,_26%,_31%)]">
+        <main class="flex h-full w-full items-center justify-center">
+            <div class="calculator mx-auto w-60">
+                <div class="screen mx-auto my-2 flex h-12 w-full flex-col items-end justify-around rounded bg-[hsl(224,_36%,_15%)] p-1 text-white">
+                    <div class="result-display"></div>
+                    <div class="input-data-display"></div>
+                </div>
+                <div class="pad mx-auto w-full rounded bg-[hsl(224,_36%,_15%)] p-1 text-center font-bold">
+                    <div class="row mx-auto grid w-full grid-cols-4">
+                        <button class="btn num m-1 p-2 font-bold" type="button">7</button>
+                        <button class="btn num m-1 p-2 font-bold" type="button">8</button>
+                        <button class="btn num m-1 p-2 font-bold" type="button">9</button>
+                        <button class="btn del m-1 bg-[hsl(185,_42%,_37%)] p-2 font-bold">DEL</button>
+                    </div>
+                    <div class="row mx-auto grid w-full grid-cols-4">
+                        <button class="btn num m-1 p-2 font-bold" type="button">4</button>
+                        <button class="btn num m-1 p-2 font-bold" type="button">5</button>
+                        <button class="btn num m-1 p-2 font-bold" type="button">6</button>
+                        <button class="btn opr m-1 p-2 font-bold" type="button">+</button>
+                    </div>
+                    <div class="row mx-auto grid w-full grid-cols-4">
+                        <button class="btn num m-1 p-2 font-bold" type="button">1</button>
+                        <button class="btn num m-1 p-2 font-bold" type="button">2</button>
+                        <button class="btn num m-1 p-2 font-bold" type="button">3</button>
+                        <button class="btn opr m-1 p-2 font-bold" type="button">-</button>
+                    </div>
+                    <div class="row mx-auto grid w-full grid-cols-4">
+                        <button class="btn num m-1 p-2 font-bold" type="button">.</button>
+                        <button class="btn num m-1 p-2 font-bold" type="button">0</button>
+                        <button class="btn opr m-1 p-2 font-bold" type="button">/</button>
+                        <button class="btn opr m-1 p-2 font-bold" type="button">*</button>
+                    </div>
+                    <div class="row mx-auto grid w-full grid-cols-4">
+                        <button class="btn reset col-span-2 m-1 bg-[hsl(185,_42%,_37%)] p-2 font-bold" type="button">RESET</button>
+                        <button class="btn equal col-span-2 m-1 bg-[hsl(6,_63%,_50%)] p-2 font-bold" type="button">=</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
