@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Charcter Encode and Responsiveness  -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Tab Title and Icon -->
+        <title>Multi Step From</title>
+
+        <!-- Search Engine Optimization -->
+        <meta name="description" content="Page description for SEO purposes." />
+        <meta name="robots" content="index, follow" />
+        <link rel="stylesheet" href="/styles/main.css" />
+        <style>
+            body {
+                font-family: "Ubuntu", sans-serif;
+                --primary-color: hsl(213, 96%, 18%);
+                /* --secondary-color: hsl(0, 94%, 66%); */
+                --btn-bg: var(--primary-color);
+                --border-invalid-color: var(--secondary-color);
+            }
+            .step-navigation {
+                --btn-bg: transparent;
+            }
+            .prev {
+                --btn-bg: hsla(0, 0%, 0%, 0.4);
+            }
+        </style>
+        <script type="module" src="/scripts/front_end_mentor/fem-adv-multi-form.js" defer></script>
+    </head>
+
+    <!-- Visual Part -->
+    <body class="fem-adv-multi-form h-screen w-screen bg-gray-300">
+        <!-- Main Content -->
+        <main class="mx-auto flex h-full max-w-7xl flex-col bg-gray-300 p-0 sm:flex-row sm:bg-white sm:p-4">
+            <div
+                class="step-navigation flex h-52 w-full items-start justify-center rounded-none p-2 sm:h-full sm:max-w-[180px] sm:flex-col sm:items-center sm:justify-start sm:rounded-xl sm:pt-8 md:max-w-[280px] [&>*]:mr-6 sm:[&>*]:mb-6 sm:[&>*]:mr-0">
+                <div class="flex items-center justify-center gap-4">
+                    <div class="btn border-1 nav-btn inline-block h-12 w-12 rounded-full border-white text-black hover:text-black">1</div>
+                    <div class="hidden text-white sm:block">
+                        <span class="mb-1 block">STEP 1</span>
+                        <span class="block">YOUR INFO</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-4">
+                    <div class="btn border-1 nav-btn inline-block h-12 w-12 rounded-full border-white text-black hover:text-black">2</div>
+                    <div class="hidden text-white sm:block">
+                        <span class="mb-1 block">STEP 2</span>
+                        <span class="block">SLECT PLAN</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-4">
+                    <div class="btn border-1 nav-btn inline-block h-12 w-12 rounded-full border-white text-black hover:text-black sm:mr-4">3</div>
+                    <div class="hidden text-white sm:block">
+                        <span class="mb-1 block">STEP 3</span>
+                        <span class="block">ADD-ONS</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-4">
+                    <div class="btn border-1 nav-btn inline-block h-12 w-12 rounded-full border-white text-black hover:text-black">4</div>
+                    <div class="hidden text-white sm:block">
+                        <span class="mb-1 block">STEP 4</span>
+                        <span class="block">SUMMARY</span>
+                    </div>
+                </div>
+            </div>
+            <form class="mx-auto h-full w-full">
+                <!-- Step 1 -->
+                <fieldset class="step hidden h-full w-full flex-col" id="step1">
+                    <div class="field-top relative -top-12 mx-12 rounded-md bg-white p-2 opacity-80 sm:top-0">
+                        <h2 class="step-title">Personal info</h2>
+                        <p class="step-description mx-auto mb-8 mt-2 max-w-sm">Please provide your name, email address, and phone number.</p>
+                        <div class="input-wrapper relative mx-auto max-w-md text-left">
+                            <label class="mx-auto mb-8 block w-full" for="">
+                                <span class="label-name text-gray-900">Name</span>
+                                <input
+                                    class="form-input input mb-4 mt-2 block w-full rounded outline outline-1 outline-gray-400 focus:outline-[hsl(243,_100%,_62%)]"
+                                    type="text"
+                                    name="name"
+                                    placeholder="e.g. stephan king" />
+                            </label>
+                            <label class="mx-auto mb-8 block w-full" for="">
+                                <span class="label-name text-gray-900">Email</span>
+                                <input
+                                    class="form-input input mb-4 mt-2 block w-full rounded outline outline-1 outline-gray-400 focus:outline-[hsl(243,_100%,_62%)]"
+                                    type="email"
+                                    name="email"
+                                    placeholder="e.g. stephanking@lorem.com" />
+                            </label>
+                            <label class="mx-auto block w-full" for="">
+                                <span class="label-name text-gray-900">Phone Number</span>
+                                <input
+                                    class="form-input input mb-4 mt-2 block w-full rounded outline outline-1 outline-gray-400 focus:outline-[hsl(243,_100%,_62%)]"
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="e.g. +1234567890" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="step-btn-wrapper field-bottom mt-auto flex w-full items-center justify-end rounded bg-white p-1">
+                        <button class="next btn" type="button">Next</button>
+                    </div>
+                </fieldset>
+                <!-- Step 2 -->
+                <fieldset class="step hidden h-full w-full flex-col text-center" id="step2">
+                    <div class="field-top relative -top-12 mx-12 rounded-md bg-white p-2 opacity-80 sm:top-0">
+                        <h2 class="step-title">Slect your plan</h2>
+                        <p class="step-description mx-auto mb-2 mt-2 max-w-sm sm:mb-8">You have the option of monthly or yearly billing.</p>
+                        <div class="input-wrapper relative mx-auto flex max-w-md flex-col items-center justify-center text-left sm:flex-row">
+                            <label
+                                id="archade-label"
+                                class="plan-label m-auto mt-1 flex w-full max-w-xs flex-row items-center justify-start rounded p-2 outline outline-1 outline-gray-400 checked:outline-[hsl(243,_100%,_62%)] sm:w-20 sm:flex-col sm:items-start"
+                                for="archade">
+                                <div class="plan-img archade-img mr-2">
+                                    <img
+                                        class="mb-2 block w-6"
+                                        src="/images/front_end_mentor/fem-adv-multi-form/icon-arcade.svg"
+                                        alt="icon for archade plan" />
+                                </div>
+                                <div class="plan-txt archade-txt">
+                                    <span class="plan-title text-sm font-semibold">Archade</span>
+                                    <input id="archade" type="radio" name="plan" />
+                                    <span class="plan-price archade my-1 block text-[10px] text-gray-500">$9/mo</span>
+                                    <span class="discount block text-[10px]"></span>
+                                </div>
+                            </label>
+                            <label
+                                id="advance-label"
+                                class="plan-label m-auto mt-1 flex w-full max-w-xs flex-row items-center justify-start rounded p-2 outline outline-1 outline-gray-400 checked:outline-[hsl(243,_100%,_62%)] sm:w-20 sm:flex-col sm:items-start"
+                                for="advance">
+                                <div class="plan-img archade-img mr-2">
+                                    <img
+                                        class="mb-2 block w-6"
+                                        src="/images/front_end_mentor/fem-adv-multi-form/icon-advanced.svg"
+                                        alt="icon for advance plan" />
+                                </div>
+
+                                <div class="plan-txt advance-txt">
+                                    <span class="plan-title text-sm font-semibold">Advance</span>
+                                    <input id="advance" type="radio" name="plan" />
+                                    <span class="plan-price my-1 block text-[10px] text-gray-500">$12/mo</span>
+                                    <span class="discount block text-[10px]"></span>
+                                </div>
+                            </label>
+                            <label
+                                id="pro-label"
+                                class="plan-label m-auto mt-1 flex w-full max-w-xs flex-row items-center justify-start rounded p-2 outline outline-1 outline-gray-400 checked:outline-[hsl(243,_100%,_62%)] sm:w-20 sm:flex-col sm:items-start"
+                                for="pro">
+                                <div class="plan-img pro-img mr-2">
+                                    <img
+                                        class="mb-2 block w-6"
+                                        src="/images/front_end_mentor/fem-adv-multi-form/icon-pro.svg"
+                                        alt="icon for pro plan" />
+                                </div>
+
+                                <div class="plan-txt pro-txt">
+                                    <span class="plan-title text-sm font-semibold">Pro</span>
+                                    <input id="pro" type="radio" name="plan" />
+                                    <span class="plan-price my-1 block text-[10px] text-gray-500">$15/mo</span>
+                                    <span class="discount block text-[10px]"></span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="toggle-container mx-auto mt-1 flex h-12 max-w-md items-center justify-center bg-gray-200 sm:mt-8">
+                            <span class="toggle-description monthly-description active text-gray-600">Monthly</span>
+                            <label class="relative mx-4 mb-8 h-6 w-10 translate-y-2/3 rounded-3xl bg-[hsl(213,_96%,_18%)]" for="toggle">
+                                <input id="toggle" class="toggle" type="checkbox" name="toggle" />
+                                <div class="toggle-btn absolute left-1 top-[15%] h-4 w-4 rounded-full bg-white"></div>
+                            </label>
+                            <span class="toggle-description yearly-description text-gray-600">Yearly</span>
+                        </div>
+                    </div>
+                    <div class="step-btn-wrapper field-bottom mt-auto flex w-full items-center justify-between rounded bg-white p-1">
+                        <button class="prev btn" type="button">Back</button>
+                        <button class="next btn" type="button">Next</button>
+                    </div>
+                </fieldset>
+                <!-- Step 3 -->
+                <fieldset class="step hidden h-full w-full flex-col" id="step3">
+                    <div class="field-top relative -top-12 mx-12 rounded-md bg-white p-2 opacity-80 sm:top-0">
+                        <h2 class="step-title">Pick add-ons</h2>
+                        <p class="step-description mx-auto mb-8 mt-2 max-w-sm">Add-ons help enhance your gaming experience.</p>
+                        <div class="input-wrapper mx-auto max-w-md text-left">
+                            <label class="addon-label relative mb-8 flex w-full items-center justify-start" for="service">
+                                <input id="service" type="checkbox" name="add-on" class="checkbox" />
+                                <div class="tickmark absolute left-1 top-[40%]"></div>
+                                <div class="addon-info ml-4 mr-auto">
+                                    <span id="addon-title-service" class="addon-title service block text-sm font-semibold">Online service</span>
+                                    <span class="addon-subtitle text-xs font-extralight text-gray-600">Access to multiplayer games</span>
+                                </div>
+                                <span id="addon-price-service" class="addon-price service online-servcie-price text-xs text-[hsl(243,_100%,_62%)]"
+                                    >+$1/mo</span
+                                >
+                            </label>
+                            <label class="addon-label relative mb-8 flex w-full items-center justify-start" for="storage">
+                                <input id="storage" type="checkbox" name="add-on" class="checkbox" />
+                                <div class="tickmark absolute left-1 top-[40%]"></div>
+                                <div class="addon-info ml-4 mr-auto">
+                                    <span id="addon-title-storage" class="addon-title storage block text-sm font-semibold">Larger storage</span>
+                                    <span class="addon-subtitle text-xs font-extralight text-gray-600">Extra 1TB of cloud save</span>
+                                </div>
+                                <span id="addon-price-storage" class="addon-price storage larger-storage-price text-xs text-[hsl(243,_100%,_62%)]"
+                                    >+$2/mo</span
+                                >
+                            </label>
+                            <label class="addon-label relative mb-8 flex w-full items-center justify-start" for="profile">
+                                <input id="profile" type="checkbox" name="add-on" class="checkbox" />
+                                <div class="tickmark absolute left-1 top-[40%]"></div>
+                                <div class="addon-info ml-4 mr-auto">
+                                    <span id="addon-title-profile" class="addon-title profile block text-sm font-semibold">Customizable profile</span>
+                                    <span class="addon-subtitle text-xs font-extralight text-gray-600">Custom theme on your profile</span>
+                                </div>
+                                <span id="addon-price-profile" class="addon-price profile custom-profile-price text-xs text-[hsl(243,_100%,_62%)]"
+                                    >+$2/mo</span
+                                >
+                            </label>
+                        </div>
+                    </div>
+                    <div class="step-btn-wrapper field-bottom mt-auto flex w-full items-center justify-between rounded bg-white p-1">
+                        <button class="prev btn" type="button">Back</button>
+                        <button class="next btn" type="button">Next</button>
+                    </div>
+                </fieldset>
+                <!-- Step 4 -->
+                <fieldset class="step hidden h-full w-full flex-col" id="step4">
+                    <div class="field-top rounded-2x p-4l relative -top-12 mx-12 bg-white opacity-80 sm:top-0">
+                        <h2 class="step-title">Finishing up</h2>
+                        <p class="step-description mx-auto mb-8 mt-2 max-w-sm">Double-check every thing looks OK before confirming.</p>
+                        <div class="input-wrapper mx-auto max-w-md rounded bg-gray-200 p-4 text-left">
+                            <div class="flex items-center justify-between">
+                                <span>
+                                    <span class="summary-plan-title block font-medium"></span>
+                                    <span class="summary-plan-change-link cursor-pointer text-sm text-gray-700 underline">change</span>
+                                </span>
+                                <span class="summary-plan-price font-medium"> </span>
+                            </div>
+                            <div class="h-line my-4"></div>
+                            <ul class="summary-addon-list"></ul>
+                        </div>
+                        <p class="mx-auto mt-4 flex max-w-md items-center justify-between">
+                            <span class="total-title"></span><span class="total-price"></span>
+                        </p>
+                    </div>
+                    <div class="step-btn-wrapper field-bottom mt-auto flex w-full items-center justify-between rounded bg-white p-1">
+                        <button class="prev btn" type="button">Back</button>
+                        <button class="next btn confirm" type="button">Confirm</button>
+                    </div>
+                </fieldset>
+                <!-- Step 5 -->
+                <fieldset class="step hidden h-full w-full flex-col" id="step5">
+                    <div class="field-top relative -top-12 mx-12 rounded-md bg-white p-2 opacity-80 sm:top-0">
+                        <h2 class="step-title">Thank you!</h2>
+                        <p class="step-description mx-auto mb-8 mt-2 max-w-sm">
+                            Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel
+                            free to email us at support@loremgaming.com.
+                        </p>
+                    </div>
+                </fieldset>
+            </form>
+        </main>
+    </body>
+</html>

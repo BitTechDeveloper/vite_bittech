@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Charcter Encode and Responsiveness  -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Tab Title and Icon -->
+        <title>Ecommerce Product Page Main</title>
+
+        <!-- Search Engine Optimization -->
+        <meta name="description" content="Page description for SEO purposes." />
+        <meta name="robots" content="index, follow" />
+        <link rel="stylesheet" href="/styles/main.css" />
+        <style>
+            html {
+                font-family: "Kumbh Sans", sans-serif;
+                /* use "ubuntu" only when "kumbh sans" doesn't work */
+                /* font-family: "Ubuntu", sans-serif;  */
+            }
+            body {
+                --primary-color: hsl(26, 100%, 55%);
+                /* --secondary-color: hsl(25, 100%, 94%); */
+                /* --headings-color: hsla(0, 0%, 20%, 1); */
+                /* --text-color: hsla(0, 0%, 50%, 1); */
+                --btn-bg: var(--primary-color);
+                /* --border-invalid-color: red; */
+            }
+        </style>
+        <script type="module" src="/scripts/front_end_mentor/fem-int-ecommerce.js" defer></script>
+    </head>
+
+    <!-- Visual Part -->
+    <body class="fem-ecommerce-product-page mx-auto w-full max-w-7xl overflow-x-hidden bg-white">
+        <!-- Header -->
+        <header class="mb-0 px-4 py-2">
+            <!-- Navigation -->
+            <nav class="main-nav h-line">
+                <div class="hamburger-logo-wrapper flex items-center justify-center gap-2">
+                    <!-- hamburger -->
+                    <div class="hamburger-wrapper z-50 sm:hidden">
+                        <img
+                            class="hamburger-open-img"
+                            src="/images/front_end_mentor/fem-int-bookmark/icon-hamburger.svg"
+                            alt="icon to open menu in mobile view" />
+                        <img
+                            class="hamburger-close-img hidden w-5"
+                            src="/images/front_end_mentor/fem-int-ecommerce/icon-close.svg"
+                            alt="icon to close menu in mobile view" />
+                    </div>
+                    <!-- Logo -->
+                    <div class="logo-wrapper">
+                        <img id="logo" src="/images/front_end_mentor/fem-int-ecommerce/logo.svg" alt="logo" />
+                    </div>
+                </div>
+                <!-- Menu -->
+                <ul class="menu flex-shrink justify-start gap-0 text-base text-gray-500">
+                    <li>
+                        <a class="h-full border-4 border-solid border-transparent py-8 hover:border-b-[hsl(26,_100%,_55%)]" href="#">Collections</a>
+                    </li>
+                    <li>
+                        <a class="h-full border-4 border-solid border-transparent py-8 hover:border-b-[hsl(26,_100%,_55%)]" href="#">Men</a>
+                    </li>
+                    <li>
+                        <a class="h-full border-4 border-solid border-transparent py-8 hover:border-b-[hsl(26,_100%,_55%)]" href="#">Women</a>
+                    </li>
+                    <li>
+                        <a class="h-full border-4 border-solid border-transparent py-8 hover:border-b-[hsl(26,_100%,_55%)]" href="#">About</a>
+                    </li>
+                    <li>
+                        <a class="h-full border-4 border-solid border-transparent py-8 hover:border-b-[hsl(26,_100%,_55%)]" href="#">Contact</a>
+                    </li>
+                </ul>
+                <div class="cart-avatar-wrapper flex items-center justify-center gap-6">
+                    <div class="cart-wrapper relative">
+                        <span class="cart-badge absolute -right-3 -top-3 h-5 w-5 rounded-full bg-[hsl(26,_100%,_55%)] text-white">0</span>
+                        <img class="cursor-pointer" src="/images/front_end_mentor/fem-int-ecommerce/icon-cart.svg" alt="icon for cart" />
+                        <div class="cart-dropdown c-shadow absolute -right-16 top-16 z-[1000] hidden w-80 bg-white p-4 text-left">
+                            <span class="cart-title font-bold text-gray-900">Cart</span>
+                            <span class="h-line my-4 block"></span>
+                            <div class="dropdown-content-empty hidden text-center font-bold text-gray-400">Your cart is empty</div>
+                            <div class="dropdown-content my-2 flex items-center justify-center gap-4">
+                                <span class="h-8 w-8">
+                                    <img
+                                        src="/images/front_end_mentor/fem-int-ecommerce/image-product-1-thumbnail.jpg"
+                                        alt="thumbnail image for sneakers" />
+                                </span>
+                                <span class="text-left">
+                                    <span class="block">Fall Limited Edition Sneakers</span>
+                                    <span>
+                                        <span>$125 x</span>
+                                        <span class="item-dropdown-display"></span>
+                                        <span class="total-price-dropdown-display font-bold text-black"></span>
+                                    </span>
+                                </span>
+                                <span class="dropdown-delete h-4 w-4 cursor-pointer">
+                                    <img src="/images/front_end_mentor/fem-int-ecommerce/icon-delete.svg" alt="icon for delete selected product" />
+                                </span>
+                            </div>
+                            <button
+                                type="button"
+                                class="checkout w-72 cursor-pointer rounded bg-[hsl(26,_100%,_55%)] p-2 text-center text-white active:scale-[.99]">
+                                Checkout
+                            </button>
+                        </div>
+                    </div>
+                    <div class="profile-avatar-wrapper w-14">
+                        <img
+                            class="cursor-pointer rounded-full border-2 border-solid border-transparent hover:border-[hsl(26,_100%,_55%)]"
+                            src="/images/front_end_mentor/fem-int-ecommerce/image-avatar.png"
+                            alt="logo" />
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="mt-0 p-0">
+            <section class="hero mx-auto flex flex-col items-center justify-center gap-2 p-0 sm:flex-row sm:p-1 md:gap-8 lg:gap-20">
+                <div class="hero-img-wrapper mx-auto flex max-h-[450px] max-w-[400px] flex-col sm:mx-0">
+                    <div class="large-img-wrapper relative flex w-full overflow-hidden rounded-xl sm:mb-8">
+                        <div class="navigation-wrapper sm:hidden">
+                            <img
+                                class="prev absolute left-1 top-1/2 h-8 w-8 rounded-full bg-white p-2"
+                                src="/images/front_end_mentor/fem-int-ecommerce/icon-previous.svg"
+                                alt="icon to slide next product image" />
+
+                            <img
+                                class="next absolute right-1 top-1/2 h-8 w-8 rounded-full bg-white p-2"
+                                src="/images/front_end_mentor/fem-int-ecommerce/icon-next.svg"
+                                alt="icon to slide previous product image" />
+                        </div>
+                        <img
+                            class="large-img main-large-img max-h-full max-w-full"
+                            src="/images/front_end_mentor/fem-int-ecommerce/image-product-1.jpg"
+                            alt="product image to show in main place" />
+                        <img
+                            class="large-img main-large-img hidden max-h-full max-w-full"
+                            src="/images/front_end_mentor/fem-int-ecommerce/image-product-2.jpg"
+                            alt="product image to show in main place" />
+                        <img
+                            class="large-img main-large-img hidden max-h-full max-w-full"
+                            src="/images/front_end_mentor/fem-int-ecommerce/image-product-3.jpg"
+                            alt="product image to show in main place" />
+                        <img
+                            class="large-img main-large-img hidden max-h-full max-w-full"
+                            src="/images/front_end_mentor/fem-int-ecommerce/image-product-4.jpg"
+                            alt="product image to show in main place" />
+                    </div>
+                    <div class="thumbnail-img-wrapper hidden w-full flex-row justify-between sm:flex">
+                        <img
+                            class="thumbnail-img h-full w-1/5 rounded-lg"
+                            src="/images/front_end_mentor/fem-int-ecommerce/image-product-1-thumbnail.jpg"
+                            alt="thumbnail image to show in bottom of  main place" />
+                        <img
+                            class="thumbnail-img h-full w-1/5 rounded-lg"
+                            src="/images/front_end_mentor/fem-int-ecommerce/image-product-2-thumbnail.jpg"
+                            alt="thumbnail image to show in bottom of  main place" />
+                        <img
+                            class="thumbnail-img h-full w-1/5 rounded-lg"
+                            src="/images/front_end_mentor/fem-int-ecommerce/image-product-3-thumbnail.jpg"
+                            alt="thumbnail image to show in bottom of  main place" />
+                        <img
+                            class="thumbnail-img h-full w-1/5 rounded-lg"
+                            src="/images/front_end_mentor/fem-int-ecommerce/image-product-4-thumbnail.jpg"
+                            alt="thumbnail image to show in bottom of  main place" />
+                    </div>
+                </div>
+                <div class="hero-content-wrapper mx-auto max-h-[450px] w-[90%] max-w-[400px] text-start sm:mx-0">
+                    <!-- Pre Title -->
+                    <p class="pre-title my-2 text-sm font-medium text-[hsl(26,_100%,_55%)]">SNEAKER COMPANY</p>
+                    <!-- Title -->
+                    <h2 class="product-title text-3xl font-bold">Fall Limited Edition Sneakers</h2>
+                    <!-- Description -->
+                    <p class="product-description mb-4 mt-6 max-w-[400px] text-sm font-medium">
+                        These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they will withstand
+                        everything the weather can offer.
+                    </p>
+                    <!-- Price Wrapper -->
+                    <div class="product-price-wrapper mb-4 flex flex-row items-center justify-around gap-4 sm:flex-col sm:items-start">
+                        <div class="price">
+                            <span class="mr-4 text-2xl font-bold text-gray-900">$125.00</span>
+                            <span class="discount rounded bg-[hsl(25,_100%,_94%)] p-1 text-base font-semibold text-[hsl(26,_100%,_55%)]">50%</span>
+                        </div>
+                        <div class="prev-price text-sm font-bold text-gray-400 line-through">$250.00</div>
+                    </div>
+                    <!-- Cart Buttons wrapper -->
+                    <div class="cart-btns-wrapper flex flex-col items-center justify-center gap-2 sm:flex-row">
+                        <div
+                            class="counter-wrapper flex w-full items-center justify-around rounded-lg bg-[hsl(223,_64%,_98%)] p-2 text-xl font-bold sm:w-1/2">
+                            <div class="minus cursor-context-menu text-3xl font-extrabold text-[hsl(26,_100%,_55%)]">-</div>
+                            <div class="item-amount-display">0</div>
+                            <div class="plus cursor-context-menu text-3xl font-extrabold text-[hsl(26,_100%,_55%)]">+</div>
+                        </div>
+                        <button
+                            type="button"
+                            class="add-to-cart btn w-full rounded-lg text-center hover:rounded-xl hover:border-0 hover:bg-[hsl(26,_100%,_55%)] hover:text-white sm:w-1/2">
+                            <img
+                                class="cart-btn-icon mr-2 inline-block"
+                                src="/images/front_end_mentor/fem-int-ecommerce/icon-cart.svg"
+                                alt="icon for cart" />
+                            <span>Add to cart</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <div class="lightbox-overlay fixed left-0 top-0 hidden h-screen w-screen bg-[hsla(0,_0%,_0%,_0.75)]">
+                <div class="lightbox-img-wrapper relative mx-auto mt-[10%] max-h-[450px] max-w-[400px]">
+                    <!-- Lightbox Close Icon -->
+                    <img
+                        class="lightbox-close-img absolute -top-7 right-0 w-6 fill-white"
+                        src="/images/front_end_mentor/fem-int-ecommerce/icon-close.svg"
+                        alt="product image to show in lightbox view" />
+                    <!-- Lightbox large Image -->
+                    <img
+                        class="large-img lightbox-img max-h-full max-w-full"
+                        src="/images/front_end_mentor/fem-int-ecommerce/image-product-1.jpg"
+                        alt="product image to show in lightbox view" />
+                    <!-- Lightbox Navigation Icons -->
+                    <div class="navigation-wrapper">
+                        <img
+                            class="prev absolute left-1 top-1/2 h-8 w-8 rounded-full bg-white p-2"
+                            src="/images/front_end_mentor/fem-int-ecommerce/icon-previous.svg"
+                            alt="product image to show in lightbox view" />
+
+                        <img
+                            class="next absolute right-1 top-1/2 h-8 w-8 rounded-full bg-white p-2"
+                            src="/images/front_end_mentor/fem-int-ecommerce/icon-next.svg"
+                            alt="product image to show in lightbox view" />
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer></footer>
+    </body>
+</html>

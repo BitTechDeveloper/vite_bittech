@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Charcter Encode and Responsiveness  -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Tab Title and Icon -->
+        <title>Bookmark Lnading Page Master</title>
+
+        <!-- Search Engine Optimization -->
+        <meta name="description" content="Page description for SEO purposes." />
+        <meta name="robots" content="index, follow" />
+        <link rel="stylesheet" href="/styles/main.css" />
+        <style>
+            html {
+                font-family: "Rubik", sans-serif;
+            }
+            body {
+                --primary-color: hsl(231, 69%, 60%);
+                --secondary-color: hsl(0, 94%, 66%);
+                --btn-bg: var(--primary-color);
+                --border-invalid-color: var(--secondary-color);
+            }
+            nav a:hover {
+                color: var(--secondary-color);
+            }
+            nav,
+            .features,
+            .stats {
+                --btn-bg: var(--secondary-color);
+            }
+            .hero-buttons-wrapper :last-child {
+                --btn-bg: hsla(0, 0%, 30%, 1);
+                border-color: hsla(0, 0%, 0%, 0.05);
+            }
+        </style>
+        <script type="module" src="/scripts/front_end_mentor/fem-int-bookmark.js" defer></script>
+    </head>
+
+    <!-- Visual Part -->
+    <body class="fem-int-bookmark">
+        <!-- Header -->
+        <header>
+            <!-- Main Navigation Bar -->
+            <nav class="main-nav mx-auto max-w-7xl">
+                <!-- Logo -->
+                <div class="logo-wrapper z-50">
+                    <img class="logo-img" src="/images/front_end_mentor/fem-int-bookmark/logo-bookmark.svg" alt="logo" />
+                </div>
+                <!-- Menu -->
+                <div class="menu">
+                    <!-- Nav List -->
+                    <ul class="menu-list flex items-center justify-center gap-4 active:scale-100">
+                        <li><a href="#">FEATURES</a></li>
+                        <li><a href="#">PRICING</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                    </ul>
+                    <!-- Nav Buttons -->
+                    <button class="btn hover-invert">LOGIN</button>
+                    <!-- Social Icons in Mobile Nav  -->
+                    <div class="social-Icons hidden">
+                        <img src="/images/front_end_mentor/fem-int-bookmark/icon-facebook.svg" alt="Facebook Icon" />
+                        <img src="/images/front_end_mentor/fem-int-bookmark/icon-twitter.svg" alt="Twitter Icon" />
+                    </div>
+                </div>
+
+                <!-- Hamburger -->
+                <div class="hamburger-wrapper z-50 sm:hidden">
+                    <img
+                        class="hamburger-open-img"
+                        src="/images/front_end_mentor/fem-int-bookmark/icon-hamburger.svg"
+                        alt="icon to open menu in mobile view" />
+                    <img
+                        class="hamburger-close-img"
+                        src="/images/front_end_mentor/fem-int-bookmark/icon-close.svg"
+                        alt="icon to close menu in mobile view" />
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Hero Section -->
+            <section class="hero mx-auto flex flex-col-reverse items-center justify-between p-4 sm:flex-row">
+                <div
+                    class="hero-content-wrapper relative top-[-2rem] mx-auto flex flex-col justify-center gap-8 self-stretch sm:items-start sm:text-left lg:max-w-[40%]">
+                    <!-- Hero Info -->
+                    <div class="hero-info-wrapper">
+                        <h1>A Simple Bookmark Manager</h1>
+                        <p class="md:pr-8">
+                            A clean and simple interface to organize your websites. Open a new browser tab and see your sites load instantly. Try it
+                            for free.
+                        </p>
+                    </div>
+                    <!-- Hero Buttons -->
+                    <div class="hero-buttons-wrapper flex flex-row justify-center gap-4">
+                        <button class="btn hover-invert hero-button">Get it on Chrome</button>
+                        <button class="btn hover-invert hero-button bg-gray-200 text-gray-600 hover:border-gray-600">Get it on Firefox</button>
+                    </div>
+                </div>
+                <!-- Hero Image -->
+                <div class="hero-image-wrapper mx-auto w-full lg:max-w-[40%]">
+                    <img src="/images/front_end_mentor/fem-int-bookmark/illustration-hero.svg" alt="image of laptop" />
+                </div>
+            </section>
+            <!-- Features Section -->
+            <section class="features p-4">
+                <h2>Features</h2>
+                <p class="intro">
+                    Our aim is to make it quick and easy for you to access your favorite websites. Your bookmarks sync between your devices so you can
+                    access them on the go.
+                </p>
+                <!-- Tabs Display -->
+                <div class="tabs-display-wrapper">
+                    <!-- Tab buttons -->
+                    <div
+                        class="tab-buttons-wrapper mx-auto mb-12 max-w-2xl items-center justify-between border-0 border-solid border-gray-400 sm:flex sm:border-b">
+                        <div class="h-line mx-auto w-[90%] sm:hidden"></div>
+                        <button
+                            class="btn hover-invert tab-button active block rounded-none border-0 bg-white text-gray-600 max-[639px]:mx-auto"
+                            data-tab-card="card-1">
+                            Simple Bookmarking
+                        </button>
+                        <div class="h-line mx-auto w-[90%] sm:hidden"></div>
+                        <button
+                            class="btn hover-invert tab-button block rounded-none border-0 bg-white text-gray-600 max-[639px]:mx-auto"
+                            data-tab-card="card-2">
+                            Speedy Searching
+                        </button>
+                        <div class="h-line mx-auto w-[90%] sm:hidden"></div>
+                        <button
+                            class="btn hover-invert tab-button block rounded-none border-0 bg-white text-gray-600 max-[639px]:mx-auto"
+                            data-tab-card="card-3">
+                            Easy Sharing
+                        </button>
+                        <div class="h-line mx-auto w-[90%] sm:hidden"></div>
+                    </div>
+                    <!-- Tab Cards -->
+
+                    <!-- New Card -->
+                    <div
+                        class="tab-card max-[639]: active my-4 hidden flex-col items-center justify-between gap-4 sm:flex-row lg:justify-around"
+                        id="card-1">
+                        <div class="tab-image-wrapper sm:max-w-[50%] lg:max-w-[40%]">
+                            <img
+                                class="card-image"
+                                src="/images/front_end_mentor/fem-int-bookmark/illustration-features-tab-1.svg"
+                                alt="image for laptop" />
+                        </div>
+                        <div
+                            class="tab-content-wrapper my-8 flex flex-col items-center justify-center sm:max-w-[50%] sm:items-start sm:text-start lg:max-w-[40%]">
+                            <h3>Bookmark in one click</h3>
+                            <p class="my-4">
+                                Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you
+                                manage your sites.
+                            </p>
+                            <button class="btn hover-invert tab-card-button">More Info</button>
+                        </div>
+                    </div>
+
+                    <!-- New Card -->
+                    <div
+                        class="tab-card max-[639]: tab-card my-4 hidden flex-col items-center justify-between gap-4 sm:flex-row lg:justify-around"
+                        id="card-2">
+                        <div class="tab-image-wrapper sm:max-w-[50%] lg:max-w-[40%]">
+                            <img
+                                class="card-image"
+                                src="/images/front_end_mentor/fem-int-bookmark/illustration-features-tab-2.svg"
+                                alt="image for speedy searching" />
+                        </div>
+                        <div
+                            class="tab-content-wrapper my-8 flex flex-col items-center justify-center sm:max-w-[50%] sm:items-start sm:text-start lg:max-w-[40%]">
+                            <h3>Intelligent search</h3>
+                            <p class="my-4">
+                                Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your
+                                bookmarks.
+                            </p>
+                            <button class="btn hover-invert tab-card-button">More Info</button>
+                        </div>
+                    </div>
+
+                    <!-- New Card -->
+                    <div
+                        class="tab-card max-[639]: tab-card my-4 hidden flex-col items-center justify-between gap-4 sm:flex-row lg:justify-around"
+                        id="card-3">
+                        <div class="tab-image-wrapper sm:max-w-[50%] lg:max-w-[40%]">
+                            <img
+                                class="card-image"
+                                src="/images/front_end_mentor/fem-int-bookmark/illustration-features-tab-3.svg"
+                                alt="image for sharing bookmarks" />
+                        </div>
+                        <div
+                            class="tab-content-wrapper my-8 flex flex-col items-center justify-center sm:max-w-[50%] sm:items-start sm:text-start lg:max-w-[40%]">
+                            <h3>Share your bookmarks</h3>
+                            <p class="my-4">
+                                Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of
+                                button.
+                            </p>
+                            <button class="btn hover-invert tab-card-button">More Info</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Download Section -->
+            <section class="download">
+                <h2>Download the extension</h2>
+                <p class="intro">we've got more browsers in the pipline. Please let us know if you've got a favorite you'd like us to prioritize.</p>
+                <div class="download-card-wrapper flex flex-wrap items-center justify-center">
+                    <!-- New Card -->
+                    <div class="card relative sm:-top-12">
+                        <img class="card-image" src="/images/front_end_mentor/fem-int-bookmark/logo-chrome.svg" alt="Chrome Icon" />
+                        <h3 class="mt-4">Add to Chrome</h3>
+                        <p>Minimum Version 62</p>
+                        <div class="h-line mt-4 h-1"></div>
+                        <button class="btn hover-invert">Add & Install Extension</button>
+                    </div>
+                    <!-- New Card -->
+                    <div class="card relative">
+                        <img class="card-image" src="/images/front_end_mentor/fem-int-bookmark/logo-firefox.svg" alt="Firefox Icon" />
+                        <h3 class="mt-4">Add to Firefox</h3>
+                        <p>Minimum Version 55</p>
+                        <div class="h-line mt-4 h-1"></div>
+                        <button class="btn hover-invert">Add & Install Extension</button>
+                    </div>
+                    <!-- New Card -->
+                    <div class="card relative sm:top-12">
+                        <img class="card-image" src="/images/front_end_mentor/fem-int-bookmark/logo-opera.svg" alt="Opera Icon" />
+                        <h3 class="mt-4">Add to Opera</h3>
+                        <p>Minimum Version 46</p>
+                        <div class="h-line mt-4 h-1"></div>
+                        <button class="btn hover-invert">Add & Install Extension</button>
+                    </div>
+                </div>
+            </section>
+            <!-- FAQ Section -->
+            <section class="faq">
+                <h2>Frequently Asked Questions</h2>
+                <p class="intro">Here Are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.</p>
+                <!-- Accordian -->
+                <div class="accordian mx-auto max-w-2xl">
+                    <!-- New Accordian Item-->
+                    <div class="accordian-item h-line transition-all">
+                        <!-- Accordian Header -->
+                        <div class="accordian-header my-4 flex items-center justify-between" data-ac="ac1">
+                            <h3>What is Bookmark?</h3>
+                            <div class="img-wrapper">
+                                <img src="/images/front_end_mentor/fem-int-bookmark/icon-arrow.svg" alt="arrow icon to open accordian tab" />
+                            </div>
+                        </div>
+                        <!-- Accordian Content -->
+                        <div class="accordian-content hidden" id="ac1">
+                            <p>Bookmark is a reference manager to access specific point(page, web) later quickly.</p>
+                        </div>
+                    </div>
+                    <div class=""></div>
+                    <!-- New Accordian Item-->
+                    <div class="accordian-item h-line">
+                        <!-- Accordian Header -->
+                        <div class="accordian-header my-4 flex items-center justify-between" data-ac="ac2">
+                            <h3>How can I request a new browser?</h3>
+                            <div class="img-wrapper">
+                                <img src="/images/front_end_mentor/fem-int-bookmark/icon-arrow.svg" alt="arrow icon to open accordian tab" />
+                            </div>
+                        </div>
+                        <!-- Accordian Content -->
+                        <div class="accordian-content hidden" id="ac2">
+                            <p>You can suggest on our github community cha platform.</p>
+                        </div>
+                    </div>
+                    <div class=""></div>
+                    <!-- New Accordian Item-->
+                    <div class="accordian-item h-line">
+                        <!-- Accordian Header -->
+                        <div class="accordian-header my-4 flex items-center justify-between" data-ac="ac3">
+                            <h3>Is there a Mobile app?</h3>
+                            <div class="img-wrapper">
+                                <img src="/images/front_end_mentor/fem-int-bookmark/icon-arrow.svg" alt="arrow icon to open accordian tab" />
+                            </div>
+                        </div>
+                        <!-- Accordian Content -->
+                        <div class="accordian-content hidden" id="ac3">
+                            <p>Not yet, but our team iering it to launch an mobile app too.</p>
+                        </div>
+                    </div>
+                    <div class=""></div>
+                    <!-- New Accordian Item-->
+                    <div class="accordian-item h-line">
+                        <!-- Accordian Header -->
+                        <div class="accordian-header my-4 flex items-center justify-between" data-ac="ac4">
+                            <h3>What about other Chromium browsers?</h3>
+                            <div class="img-wrapper">
+                                <img src="/images/front_end_mentor/fem-int-bookmark/icon-arrow.svg" alt="arrow icon to open accordian tab" />
+                            </div>
+                        </div>
+                        <!-- Accordian Content -->
+                        <div class="accordian-content hidden" id="ac4">
+                            <p>Currently, we support ome Firefox and Opera but we are trying to support other Chromium browsers too.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Button Outside Accordian -->
+                <button class="accordian-button btn my-8">More INfo</button>
+            </section>
+            <!-- Stat Section -->
+            <section class="stats mb-0 bg-[--primary-color] py-20">
+                <p class="stat-number text-white">35,000 + ALREADY JOINED</p>
+                <h2 class="mx-auto my-8 max-w-lg text-4xl font-bold text-white">Stay up-to-date with what we are doing</h2>
+                <form novalidate class="relative flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-4">
+                    <label class="relative w-[80%] sm:w-80">
+                        <input class="input peer w-full invalid:border-[--secondary-color]" type="email" placeholder="Enter your email address" />
+                    </label>
+                    <button class="btn hover-invert w-[80%] border-[--secondary-color] sm:max-w-max" type="submit">Contact Us</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer relative mx-auto flex flex-col items-center justify-evenly gap-8 bg-[hsl(229,_31%,_21%)] p-12 sm:flex-row">
+            <!-- Footer Logo -->
+            <div class="logo">
+                <img class="logo-img fill-white stroke-white" src="/images/front_end_mentor/fem-int-bookmark/logo-bookmark.svg" alt="logo" />
+            </div>
+            <!-- Footer Nav List -->
+            <ul class="footer-nav-list nav-list flex flex-grow flex-col items-center justify-start gap-4 text-white sm:flex-row">
+                <li><a href="#">FEATURES</a></li>
+                <li><a href="#">PRICING</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+            <!-- Social Icons in Footer Nav  -->
+            <div class="social-Icons flex flex-row gap-8">
+                <img src="/images/front_end_mentor/fem-int-bookmark/icon-facebook.svg" alt="Facebook Icon" />
+                <img src="/images/front_end_mentor/fem-int-bookmark/icon-twitter.svg" alt="Twitter Icon" />
+            </div>
+        </footer>
+    </body>
+</html>
